@@ -9,6 +9,7 @@ import {
   FileText,
   Code,
   Loader2,
+  Key
 } from "lucide-react";
 import { apiClient } from "@/lib/api-client";
 
@@ -56,6 +57,9 @@ export default function HomePage() {
       case "CODE":
         return <Code className="w-6 h-6 text-purple-500" />;
 
+      case "UTILITY": // 🚀 เพิ่มหมวดหมู่ UTILITY สำหรับ Base64
+        return <Key className="w-6 h-6 text-amber-500" />;  
+
       default:
         return <Settings className="w-6 h-6 text-gray-500" />;
     }
@@ -68,17 +72,21 @@ export default function HomePage() {
     switch (code) {
       case "IMG_CONVERTER":
         return "/tools/image-converter";
-
       case "IMG_COMPRESSOR":
         return "/tools/image-compressor";
-
       case "CODE_FORMATTER":
         return "/tools/code-formatter";
-
       case "IMG_REMOVE_BG":
         return "/tools/image-remove-bg";
+      case "PDF_MERGE":
+        return "/tools/pdf-merge";
+      case "BASE64_TOOL": // 🚀 เพิ่มลิงก์สำหรับ Base64
+        return "/tools/base64-tool";
+
+      case "PDF_SPLIT":
+        return "/tools/pdf-split";
         
-      default:
+        default:
         return "#";
     }
   };
